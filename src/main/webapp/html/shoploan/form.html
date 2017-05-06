@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="http://www.suning.com/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>基本信息</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/form.css"/>
+    <script>
+        var c2c = c2c || {};
+    </script>
+</head>
+
+<body>
+<div class="form-wrap">
+    <div class="form-tit">
+        基本信息
+    </div>
+    <div class="form-subtit">
+        请如实填写下方内容
+    </div>
+    <div class="form-item">
+        <div class="item-tit">
+            行业选择
+        </div>
+        <div class="item-select">
+            <span class="js-click ipt-span" id="workunit1" placeholder="一级行业">一级行业</span>
+            <i class="app-ico" class="js-click"></i>
+        </div>
+        <div class="item-select" style="display: none;">
+            <span class="js-click ipt-span" id="workunit2" placeholder="二级行业">二级行业</span>
+            <i class="app-ico" class="js-click"></i>
+        </div>
+        <input name="workunit-other" id="workunit-other" type="text" class="form-ipt js-other" placeholder="请手动输入"
+               style="margin-top: 0;display: none;"/>
+    </div>
+
+    <div class="form-item">
+        <div class="item-tit">是否为本地人</div>
+        <ul class="form-list item-single-select short-list clearfix">
+            <li name="localPerson">有</li>
+            <li name="localPerson">没有</li>
+        </ul>
+    </div>
+    <div class="form-item">
+        <div class="item-tit">本地是否有房产</div>
+        <ul class="form-list item-single-select short-list clearfix">
+            <li name="house">有</li>
+            <li name="house">没有</li>
+        </ul>
+    </div>
+
+    <div class="form-item">
+        <div class="item-tit">年销售额（万元）</div>
+        <div class="item-input item">
+            <input type="number" name="income" id="income"/>
+        </div>
+    </div>
+
+    <div class="form-item">
+        <div class="item-tit">担保方式</div>
+        <ul class="form-list item-multi-select short-list clearfix">
+            <li name="guaranteeType">房产抵押</li>
+            <li name="guaranteeType">个人担保</li>
+        </ul>
+    </div>
+
+    <div class="form-item">
+        <div class="item-tit">申请金额</div>
+        <div class="item-calcula item">
+            <span class="cal-minus"></span>
+            <input type="tel" name="loannum" id="loannum" class="calcu-ipt" placeholder="0 元"/>
+            <span class="cal-plu"></span>
+        </div>
+    </div>
+
+    <div class="form-item">
+        <button type='button' class="form-submit" onclick="submitForm()">点击申请</button>
+    </div>
+</div>
+<div class="click-wrap">
+    <div class="click-back">
+        <span>返回</span>
+    </div>
+    <div class="click-content">
+        <ul>
+        </ul>
+    </div>
+</div>
+
+<!-- 引入项目js资源文件,并配置构建地址演示 -->
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/lazyload.js"></script>
+<script type="text/javascript" src="../js/fastclick.js"></script>
+<script type="text/javascript" src="../js/swipe.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/form2.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.psbc.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.psbc.pojo.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="workUnitSelect" property="workunitselect" jdbcType="VARCHAR" />
+    <result column="workUnit" property="workunit" jdbcType="VARCHAR" />
+    <result column="house" property="house" jdbcType="VARCHAR" />
+    <result column="loanNum" property="loannum" jdbcType="VARCHAR" />
+    <result column="job" property="job" jdbcType="VARCHAR" />
+    <result column="income" property="income" jdbcType="VARCHAR" />
+    <result column="loanHouse" property="loanhouse" jdbcType="VARCHAR" />
+    <result column="loanCar" property="loancar" jdbcType="VARCHAR" />
+    <result column="loanConsumer" property="loanconsumer" jdbcType="VARCHAR" />
+
+    <result column="loanType" property="loanType" jdbcType="VARCHAR" />
+    <result column="workunit2" property="workunit2" jdbcType="VARCHAR" />
+    <result column="localPerson" property="localPerson" jdbcType="VARCHAR" />
+    <result column="guaranteeType" property="guaranteeType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, workUnitSelect, workUnit, house, loanNum, job, income, loanHouse, loanCar, loanConsumer, loanType, workunit2, localPerson, guaranteeType
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from loan_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from loan_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.psbc.pojo.User" >
+    insert into loan_user (id, workUnitSelect, workUnit, 
+      house, loanNum, job, 
+      income, loanHouse, loanCar, 
+      loanConsumer,
+      loanType, workunit2, localPerson, guaranteeType)
+    values (#{id,jdbcType=INTEGER}, #{workunitselect,jdbcType=VARCHAR}, #{workunit,jdbcType=VARCHAR}, 
+      #{house,jdbcType=VARCHAR}, #{loannum,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
+      #{income,jdbcType=VARCHAR}, #{loanhouse,jdbcType=VARCHAR}, #{loancar,jdbcType=VARCHAR}, 
+      #{loanconsumer,jdbcType=VARCHAR},
+      #{loanType,jdbcType=VARCHAR}, #{workunit2,jdbcType=VARCHAR}, #{localPerson,jdbcType=VARCHAR}, #{guaranteeType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.psbc.pojo.User" useGeneratedKeys="true" keyProperty="id">
+    insert into loan_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workunitselect != null" >
+        workUnitSelect,
+      </if>
+      <if test="workunit != null" >
+        workUnit,
+      </if>
+      <if test="house != null" >
+        house,
+      </if>
+      <if test="loannum != null" >
+        loanNum,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="income != null" >
+        income,
+      </if>
+      <if test="loanhouse != null" >
+        loanHouse,
+      </if>
+      <if test="loancar != null" >
+        loanCar,
+      </if>
+      <if test="loanconsumer != null" >
+        loanConsumer,
+      </if>
+      <if test="loanType != null" >
+        loanType,
+      </if>
+      <if test="workunit2 != null" >
+        workunit2,
+      </if>
+      <if test="localPerson != null" >
+        localPerson,
+      </if>
+      <if test="guaranteeType != null" >
+        guaranteeType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workunitselect != null" >
+        #{workunitselect,jdbcType=VARCHAR},
+      </if>
+      <if test="workunit != null" >
+        #{workunit,jdbcType=VARCHAR},
+      </if>
+      <if test="house != null" >
+        #{house,jdbcType=VARCHAR},
+      </if>
+      <if test="loannum != null" >
+        #{loannum,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="income != null" >
+        #{income,jdbcType=VARCHAR},
+      </if>
+      <if test="loanhouse != null" >
+        #{loanhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="loancar != null" >
+        #{loancar,jdbcType=VARCHAR},
+      </if>
+      <if test="loanconsumer != null" >
+        #{loanconsumer,jdbcType=VARCHAR},
+      </if>
+      <if test="loanType != null" >
+        #{loanType,jdbcType=VARCHAR},
+      </if>
+      <if test="workunit2 != null" >
+        #{workunit2,jdbcType=VARCHAR},
+      </if>
+      <if test="localPerson != null" >
+        #{localPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeType != null" >
+        #{guaranteeType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.pojo.User" >
+    update loan_user
+    <set >
+      <if test="workunitselect != null" >
+        workUnitSelect = #{workunitselect,jdbcType=VARCHAR},
+      </if>
+      <if test="workunit != null" >
+        workUnit = #{workunit,jdbcType=VARCHAR},
+      </if>
+      <if test="house != null" >
+        house = #{house,jdbcType=VARCHAR},
+      </if>
+      <if test="loannum != null" >
+        loanNum = #{loannum,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="income != null" >
+        income = #{income,jdbcType=VARCHAR},
+      </if>
+      <if test="loanhouse != null" >
+        loanHouse = #{loanhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="loancar != null" >
+        loanCar = #{loancar,jdbcType=VARCHAR},
+      </if>
+      <if test="loanconsumer != null" >
+        loanConsumer = #{loanconsumer,jdbcType=VARCHAR},
+      </if>
+      <if test="loanType != null" >
+        loanType = #{loanType,jdbcType=VARCHAR},
+      </if>
+      <if test="workunit2 != null" >
+        workunit2 = #{workunit2,jdbcType=VARCHAR},
+      </if>
+      <if test="localPerson != null" >
+        localPerson = #{localPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="guaranteeType != null" >
+        guaranteeType = #{guaranteeType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.pojo.User" >
+    update loan_user
+    set workUnitSelect = #{workunitselect,jdbcType=VARCHAR},
+      workUnit = #{workunit,jdbcType=VARCHAR},
+      house = #{house,jdbcType=VARCHAR},
+      loanNum = #{loannum,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      income = #{income,jdbcType=VARCHAR},
+      loanHouse = #{loanhouse,jdbcType=VARCHAR},
+      loanCar = #{loancar,jdbcType=VARCHAR},
+      loanConsumer = #{loanconsumer,jdbcType=VARCHAR}
+      loanType = #{loanType,jdbcType=VARCHAR}
+      workunit2 = #{workunit2,jdbcType=VARCHAR}
+      localPerson = #{localPerson,jdbcType=VARCHAR}
+      guaranteeType = #{guaranteeType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

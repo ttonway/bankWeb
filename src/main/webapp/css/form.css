@@ -1,0 +1,290 @@
+.form-wrap {
+  background: #f8f8f8;
+}
+.form-wrap .form-tit {
+  height: 1.9rem;
+  line-height: 1.9rem;
+  background: #c9a96e;
+  color: #fff;
+  font-size: .7rem;
+  text-align: center;
+}
+.form-wrap .form-subtit {
+  background: #f2eee6;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  color: #c9a96e;
+  text-align: center;
+}
+.form-wrap .form-item {
+  font-size: .7rem;
+  padding: 0 .6rem;
+}
+.form-wrap .form-item .item-tit {
+  padding-top: .3rem;
+}
+.form-wrap .form-item .item-tit:before {
+  content: '';
+  display: inline-block;
+  width: .3rem;
+  background: #e6e2da;
+  height: .8rem;
+  margin-right: .3rem;
+  position: relative;
+  top: .17rem;
+}
+.form-wrap .form-item li {
+  background: #fff;
+  padding: .4rem .9rem;
+  border: 1px solid #eeeeee;
+  margin-top: .3rem;
+}
+.form-wrap .form-item li.on {
+  background: #c9a96e;
+  color: #fff;
+}
+.form-wrap .form-item .short-list li {
+  width: 49%;
+  float: left;
+}
+.form-wrap .form-item .short-list li:nth-child(2) {
+  margin-left: 2%;
+}
+.form-wrap .form-item .form-ipt {
+  width: 100%;
+  padding: .4rem .9rem;
+  border: 1px solid #eeeeee;
+  margin-top: .3rem;
+}
+.form-wrap .form-item .item-calcula,
+.form-wrap .form-item .item-input {
+  margin-top: .2rem;
+}
+.form-wrap .form-item .item-calcula span {
+  background: #f2eee6;
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 1.7rem;
+  color: #c9a96e;
+}
+.form-wrap .form-item .item-calcula span.on {
+  background: #c9a96e;
+  color: #fff;
+}
+.form-wrap .form-item .item-calcula .border,
+.form-wrap .form-item .item-input .border {
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 0 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.form-wrap .form-item .item-calcula .calcu-ipt,
+.form-wrap .form-item .item-input input {
+  padding: .4rem .9rem;
+  border: 1px solid #eeeeee;
+  width: 67%;
+  height: 1.7rem;
+  vertical-align: top;
+  text-align: center;
+  color: #000;
+}
+.form-wrap .form-item .item-input input {
+  width: 100%;
+}
+.form-wrap .form-item .item-calcula .cal-minus:before {
+  width: 20px;
+  height: 2px;
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 0 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.form-wrap .form-item .item-calcula .cal-plu:before {
+  width: 20px;
+  height: 2px;
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 0 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.form-wrap .form-item .item-calcula .cal-plu:after {
+  height: 20px;
+  width: 2px;
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 0 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.form-wrap .form-item .item-calcula input.on {
+  border-color: #c9a96e;
+}
+.form-wrap .form-item input.on {
+  border-color: #c9a96e;
+}
+.form-wrap .form-item .form-submit {
+  background: #bd9f68;
+  font-family: '苹方', 'San Francisco', Arial, Helvetica, STHeiTi, sans-serif;
+  width: 100%;
+  border: none;
+  color: #fff;
+  padding: .4rem .9rem;
+  font-size: .7rem;
+  margin: 1rem 0 2rem;
+}
+.form-wrap .app-form {
+  padding: .8rem;
+  background: #f8f8f8;
+}
+.form-wrap .app-item {
+  background: #fff;
+  position: relative;
+  font-size: .7rem;
+  border: 1px solid #eee;
+  padding: .7rem;
+  margin-bottom: .3rem;
+}
+.form-wrap .app-item span {
+  width: 3rem;
+  height: 1rem;
+  line-height: 1rem;
+  display: inline-block;
+}
+.form-wrap .app-item input {
+  width: 8rem;
+  height: 1rem;
+  line-height: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.form-wrap .app-ico {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  border: solid #dddddd;
+  border-width: 3px 0 0 3px;
+  -webkit-transform: rotate(135deg);
+}
+.click-wrap {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+  transition: left .5s;
+}
+.click-wrap li {
+  font-size: .7rem;
+  height: 2rem;
+  border: 1px solid #eeeeee;
+  text-indent: 1rem;
+  line-height: 2rem;
+}
+.click-wrap .click-back {
+  height: 2rem;
+  position: relative;
+}
+.click-wrap .click-back span {
+  position: absolute;
+  top: .3rem;
+  left: 1.1rem;
+  font-size: 1rem;
+}
+.click-wrap .click-back:before {
+  content: "";
+  position: absolute;
+  top: .7rem;
+  left: .5rem;
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  border: solid #dddddd;
+  border-width: 3px 0 0 3px;
+  -webkit-transform: rotate(-45deg);
+}
+.click-content {
+  height: 100%;
+  padding-bottom: .5rem;
+  overflow: scroll;
+}
+.click-content ul {
+  padding-bottom: 2rem;
+}
+
+.form-wrap .app-item span.ipt-span {
+  width: 8rem;
+  height: 1rem;
+  line-height: 1rem;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+
+
+.form-wrap .item-select {
+  background: #fff;
+  position: relative;
+  font-size: .7rem;
+  border: 1px solid #eee;
+  padding: .4rem 0.9rem;
+  margin-top: .3rem;
+  margin-bottom: .3rem;
+}
+.form-wrap .item-select span {
+  width: 3rem;
+  height: 1rem;
+  line-height: 1rem;
+  display: inline-block;
+}
+.form-wrap .item-select input {
+  width: 8rem;
+  height: 1rem;
+  line-height: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.form-wrap .item-select span.ipt-span {
+  width: 8rem;
+  height: 1rem;
+  line-height: 1rem;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+.form-wrap .item-select .app-ico {
+  top: 0.7rem;
+}

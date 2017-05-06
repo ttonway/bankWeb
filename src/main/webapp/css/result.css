@@ -1,0 +1,75 @@
+.res-wrapper img.res-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.res-bottom {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+}
+.res-div {
+  position: absolute;
+  top: 6rem;
+  text-align: center;
+  width: 100%;
+}
+.res-div img {
+  width: 4rem;
+  height: 4rem;
+}
+.res-div img.img-suc {
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -5rem;
+}
+.res-div .res-txt1 {
+  font-size: .8rem;
+  color: #fff;
+  width: 70%;
+  margin: .5rem auto 0;
+}
+.res-div .res-txt2 {
+  font-size: .5rem;
+  color: #f8f8f8;
+}
+.res-div .res-txt3 {
+  font-size: .6rem;
+  color: #fff;
+  width: 40%;
+  margin: 3.5rem auto 0;
+  position: relative;
+}
+.res-btn1 {
+  margin: 0 auto;
+  width: 90%;
+  height: 2rem;
+  background: #c9a96e;
+  line-height: 1.7rem;
+  text-align: center;
+  color: #fff;
+  font-size: .8rem;
+}
+.res-btn2 {
+  margin: 1rem auto 0;
+  width: 90%;
+  height: 2rem;
+  border: .15rem solid #c9a96e;
+  line-height: 1.7rem;
+  text-align: center;
+  color: #c9a96e;
+  font-size: .8rem;
+}
+
+.checklist {
+  width: 70%;
+  margin: .5rem auto 0;
+  color: #fff;
+  text-align: left;
+}
+.checklist ul,
+.checklist li {
+  list-style: disc;
+}
