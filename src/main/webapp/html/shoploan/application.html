@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="src/images/bank-logo.png" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -11,66 +10,85 @@
     <meta name="wap-font-scale" content="no">
     <meta name="keywords" content="">
     <meta name="description" content="">
+
+    <link rel="shortcut icon" href="src/images/bank-logo.png" type="image/x-icon"/>
+
     <title>个人信息</title>
-    <link rel="stylesheet" href="../css/base.css"/>
-    <link rel="stylesheet" href="../css/common.css"/>
-    <link rel="stylesheet" href="../css/form.css"/>
-    <script>
-        var c2c = c2c || {};
-    </script>
+
+    <!-- Bootstrap -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="../css/form2.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="form-wrap">
-    <div class="form-tit">
-        个人信息
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">个人信息</a>
+        </div>
     </div>
-    <div class="form-subtit">
+</nav>
+
+<div class="container">
+
+    <div class="page-header">
         请如实填写下方内容
     </div>
-    <div class="app-form">
-        <div class="app-item">
-            <span>姓 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
-            <input type="text" id="userNm" placeholder="请输入您的姓名">
+    <form>
+        <div class="form-group">
+            <label for="userNm">姓名</label>
+            <input type="text" class="form-control" id="userNm" name="userNm" placeholder="请输入您的姓名">
         </div>
-        <div class="app-item">
-            <span>手机号码</span>
-            <input type="text" id="phoneNm" placeholder="请输入您的手机号码">
+
+        <div class="form-group">
+            <label for="phoneNm">手机号码</label>
+            <input type="text" class="form-control" id="phoneNm" name="phoneNm" placeholder="请输入您的手机号码">
         </div>
-        <div class="app-item">
-            <span>支行区域</span>
-            <span class="js-click ipt-span" id="area">请选择</span>
-            <i class="app-ico" class="js-click"></i>
+
+        <div class="form-group">
+            <label for="area1">经办支行</label>
+            <select class="form-control" name="area1" id="area1">
+                <option value="" selected disabled>请选择</option>
+                <option>市区</option>
+                <option>东台</option>
+                <option>大丰</option>
+                <option>建湖</option>
+                <option>阜宁</option>
+                <option>射阳</option>
+                <option>滨海</option>
+                <option>响水</option>
+            </select>
+            <select class="form-control" name="area2" id="area2" style="margin-top: 5px; display: none;">
+                <option value="" selected disabled>请选择</option>
+            </select>
+
+            <select class="form-control" name="bank" id="bank" style="margin-top: 5px; display: none;">
+                <option value="" selected disabled>请选择</option>
+            </select>
         </div>
-        <div class="app-item" style="display: none;">
-            <span>经办支行</span>
-            <span class="js-click ipt-span" id="bank">请选择</span>
-            <i class="app-ico" class="js-click"></i>
+
+        <div class="form-group">
+            <label for="referrals">推荐人</label>
+            <input type="text" class="form-control" id="referrals" name="referrals" placeholder="非必填">
         </div>
-        <div class="app-item">
-            <span>推 荐 人</span>
-            <input type="text" id="referrals" placeholder="非必填">
-        </div>
-    </div>
-    <div class="form-item">
-        <button type='button' onclick="submitApplicationForm()" class="form-submit">提交</button>
-    </div>
-</div>
-<div class="click-wrap">
-    <div class="click-back">
-        <span>返回</span>
-    </div>
-    <ul>
-    </ul>
+
+        <button type="button" class="btn btn-primary btn-block" onclick="submitApplicationForm()">提交</button>
+    </form>
 </div>
 
-<!-- 引入项目js资源文件,并配置构建地址演示 -->
-<script type="text/javascript" src="../js/zepto.min.js"></script>
-<script type="text/javascript" src="../js/lazyload.js"></script>
-<script type="text/javascript" src="../js/fastclick.js"></script>
-<script type="text/javascript" src="../js/app.js"></script>
-<script type="text/javascript" src="../js/swipe.js"></script>
-<script type="text/javascript" src="../js/base.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/form2.js"></script>
 </body>
 </html>

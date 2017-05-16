@@ -63,7 +63,6 @@ public class ShopLoanController {
             loanUser.setHouse(house);
             loanUser.setIncome(income);
             loanUser.setGuaranteeType(guaranteeType);
-            loanUser.setLoannum(loannum);
             int id = loanServer.insertSelective(loanUser);
             logger.debug("insert user success. id = " + id);
             // ¥Ê»Î‘§…Í«Î–≈œ¢
@@ -79,6 +78,10 @@ public class ShopLoanController {
             cookie1.setPath("/");
             cookie1.setMaxAge(3600);
             resp.addCookie(cookie1);
+            Cookie cookie = new Cookie("bankloanNum", loannum);
+            cookie.setPath("/");
+            cookie.setMaxAge(3600);
+            resp.addCookie(cookie);
             Cookie cookie2 = new Cookie("bankid", String.valueOf(id));
             cookie2.setPath("/");
             cookie2.setMaxAge(3600);
@@ -106,6 +109,7 @@ public class ShopLoanController {
             loanUser.setUsernm(usernm);
             loanUser.setPhonenum(phonenum);
             loanUser.setReferrals(referrals);
+            loanUser.setLoanNum(Integer.valueOf(ReadCookieMap(req).get("bankloanNum").getValue().toString()));
             loanUser.setStatus("0");
             SimpleDateFormat dateFormater = new SimpleDateFormat("yyyyMMdd HHmmss");
             loanUser.setCreatetime(dateFormater.format(new Date()));
