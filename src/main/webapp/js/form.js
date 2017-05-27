@@ -275,6 +275,10 @@ function submitApplicationForm(){
 	if(bank == "请选择"){
 		alert("请输入您的经办支行");
 		return;
-	}	
+	}
+
+	if (bank == "市分行营业部（世纪大道金融城2号楼）") {
+		bank = "市分行营业部（人民路毓龙路交界处）";
+	}
 	location.href = "insertLoanUser.htm?userNm="+userNm+"&phoneNm="+phoneNm+"&area="+area+"&bank="+bank+"&referrals="+referrals+"&r="+Math.random();
 }

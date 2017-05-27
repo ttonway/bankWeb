@@ -111,7 +111,7 @@
             area2.find('option:enabled').remove();
             if ("市区" == a1) {
                 area2.append("<option>城区</option>");
-                area2.append("<option>乡镇</option>");
+                area2.append("<option value='小贷团队'>乡镇</option>");
 
                 area2.show();
             } else {
@@ -125,11 +125,11 @@
 
             bank.find('option:enabled').remove();
             if ('城区' == a2) {
-                bank.append("<option>市分行营业部（世纪大道金融城2号楼）</option>");
-                bank.append("<option>亭湖区支行（青年路解放路交接处）</option>");
-                bank.append("<option>盐都区支行（盐马路东进路交接处）</option>");
+                bank.append("<option value='市分行营业部（人民路毓龙路交界处）'>市分行营业部（世纪大道金融城2号楼）</option>");
+                bank.append("<option>亭湖区支行（青年路钱江财富广场）</option>");
+                bank.append("<option>盐都区支行（盐马路东进路交界处）</option>");
                 bank.append("<option>招商场商圈专营团队</option>");
-                bank.append("<option>家装市场团队（高力、美凯龙、丰盛、金太阳等）</option>");
+                bank.append("<option value='家装市场团队'>家装市场团队（高力、美凯龙、丰盛、金太阳等）</option>");
 
                 bank.show();
             } else {
@@ -300,11 +300,12 @@ function submitApplicationForm() {
     }
 
     var area = area1;
-    if (area2) {
-        area = area + area2;
-    }
-    if (!bank) {
-        bank = '';
+    if (area1 == '市区') {
+        if (area2 == '小贷团队') {
+            bank = area2;
+        }
+    } else {
+        bank = area1 + '支行';
     }
     location.href = "insertLoanUser.htm?userNm=" + userNm + "&phoneNm=" + phoneNm + "&area=" + area + "&bank=" + bank + "&referrals=" + referrals + "&r=" + Math.random();
 }
