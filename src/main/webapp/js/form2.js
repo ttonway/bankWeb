@@ -125,11 +125,11 @@
 
             bank.find('option:enabled').remove();
             if ('城区' == a2) {
-                bank.append("<option>亭湖支行</option>");
-                bank.append("<option>市分行营业部</option>");
-                bank.append("<option>盐都区支行</option>");
+                bank.append("<option>市分行营业部（世纪大道金融城2号楼）</option>");
+                bank.append("<option>亭湖区支行（青年路解放路交接处）</option>");
+                bank.append("<option>盐都区支行（盐马路东进路交接处）</option>");
                 bank.append("<option>招商场商圈专营团队</option>");
-                bank.append("<option>高力、美凯龙、丰盛、金太阳装饰城专营团队</option>");
+                bank.append("<option>家装市场团队（高力、美凯龙、丰盛、金太阳等）</option>");
 
                 bank.show();
             } else {
@@ -157,7 +157,9 @@
                 curVal = placeholder.replace(re, '');
             }
 
-            curVal = parseInt(curVal) + 10;
+            curVal = parseInt(curVal);
+            curVal = isNaN(curVal) ? 0 : curVal;
+            curVal += 10;
             $this.prev().val(curVal + ' 万元');
         });
 
@@ -173,11 +175,12 @@
                 curVal = placeholder.replace(re, '');
             }
 
-            var res = parseInt(curVal) - 10;
+            var res = parseInt(curVal);
+            res = isNaN(res) ? 0 : res;
+            res -= 10;
             if (res < 0) {
-                res = 0;
+                return;
             }
-
             curVal = res;
             $this.next().val(curVal + ' 万元');
         });

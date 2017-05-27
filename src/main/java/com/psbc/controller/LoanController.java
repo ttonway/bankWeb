@@ -116,13 +116,13 @@ public class LoanController {
 				// 第二种：需同时满足：2.2.1（4）（5）（6）填写值为均0；2.2.1（2）中选项为职员。授信额度=月收入*24
 				// 最大值为30万。最大值为30万。 房贷不算
 				else if ("0".equals(select7) && "0".equals(select8) && "select4C".equals(select4)) {
-					loanNum = Integer.valueOf(select5) * 24 > 500000 ? 500000 : Integer.valueOf(select5) * 24;
+					loanNum = Integer.valueOf(select5) * 24 > 300000 ? 300000 : Integer.valueOf(select5) * 24;
 				}
 				// 第三种：（除一、二以外的情况适用）授信额度=（还贷比系数*收入-房贷月供-车贷月供-其他贷款已用金额/36）*36/（1+6.175%）取整
 				else {
 					loanNum = (int) ((jobmap.get(select4) * Double.valueOf(select5) - Double.valueOf(select6)
 							- Double.valueOf(select7) - Double.valueOf(select8) / 36) * 36 / (1.06175));
-					loanNum = loanNum > 500000 ? 500000 : loanNum / 1000 * 1000;
+					loanNum = loanNum > 300000 ? 300000 : loanNum / 1000 * 1000;
 				}
 				loanNum = loanNum < 0 ? 0 : loanNum;
 				int id = loanServer.insertSelective(loanUser);

@@ -121,7 +121,7 @@ var bank = bank || (function(Win,Doc,$,undefined){
     						return;
     					}
     					if("盐城市区" == area){
-    						$('.click-wrap ul').append("<li onclick='liClick(this)' name='bankli'>市分行营业部（人民路毓龙路交界处）</li>");
+    						$('.click-wrap ul').append("<li onclick='liClick(this)' name='bankli'>市分行营业部（世纪大道金融城2号楼）</li>");
     						$('.click-wrap ul').append("<li onclick='liClick(this)' name='bankli'>亭湖区支行（青年路钱江财富广场）</li>");
     						$('.click-wrap ul').append("<li onclick='liClick(this)' name='bankli'>盐都区支行（盐马路东进路交界处）</li>");
     					}else if("东台支行" == area){

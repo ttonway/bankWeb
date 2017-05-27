@@ -1,0 +1,92 @@
+body {
+    background-color: #fff;
+}
+html, body {
+    height: 100%;
+}
+
+.container-fluid {
+    padding: 0;
+    height: 100%;
+}
+
+
+.carousel, .item, .active {
+    height: 100%;
+}
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-indicators {
+    margin-bottom: 50px;
+}
+
+.carousel-indicators li {
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.carousel-indicators .active {
+    width: 6px;
+    height: 6px;
+    background: #aaa6a4;
+    border: 1px #ffffff solid;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.carousel-inner>.item>img.background {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-primary {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    margin-left: -120px;
+    width: 240px;
+    padding: 10px 0 10px 0;
+}
+.top-logo {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -120px;
+    width: 240px;
+    height: auto;
+}
+.bottom-logo {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    height: auto;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    bottom: 150px;
+    left: 10px;
+    font-size: 18px;
+}
+
+.divider {
+    color: #5cc17f;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.carousel-caption .highlight {
+    color: #5cc17f;
+    font-size: 50px;
+    font-weight: 500;
+}

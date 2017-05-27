@@ -56,7 +56,7 @@ public class ShopLoanController {
         try {
 
             User loanUser = new User();
-            loanUser.setLoanType("生意贷");
+            loanUser.setLoanType("商易贷");
             loanUser.setWorkunit(workunit1);
             loanUser.setWorkunit2(workunit2);
             loanUser.setLocalPerson(localPerson);

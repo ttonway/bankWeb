@@ -1,0 +1,27 @@
+.btn-primary {
+    background-color: #5cc17f;
+    border-color: #5cc17f;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+    background-color: #5cc17f;
+    border-color: #5cc17f;
+}
+.btn-primary:hover {
+    background-color: #5cc17f;
+    border-color: #5cc17f;
+}
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #5cc17f;
+    border-color: #5cc17f;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus {
+    background-color: #5cc17f;
+    border-color: #5cc17f;
+}

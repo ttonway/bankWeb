@@ -13,7 +13,7 @@
 
     <link rel="shortcut icon" href="http://www.suning.com/favicon.ico" type="image/x-icon"/>
 
-    <title>生意贷</title>
+    <title>商易贷</title>
 
     <!-- Bootstrap -->
     <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,15 +25,15 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link href="../css/base2.css" rel="stylesheet">
     <link href="../css/result2.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
     <div class="result-block">
-        <img class="result-bg" src="../images/bank-bg.png"/>
-        <img src="../images/bank-res1.png"/>
-        <h2>您已申请成功，24小时内客户经理会与您联系 </h2>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="margin-top: 30px;">资料清单</button>
+        <img class="img-responsive" src="../images/shop-result.png"/>
+        <div class="text-content">您已申请成功<br>24小时内客户经理会<br>与您联系</div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">查看资料清单</button>
     </div>
 </div>
 
@@ -53,8 +53,8 @@
                     <li>经营流水</li>
                     <li>经营单据</li>
                     <li>资产证明</li>
-                    <li class="type-1" style="display: none;">抵押物产权证</li>
-                    <li class="type-2" style="display: none;">担保人材料（身份证件、收入证明材料）</li>
+                    <li id="type-1" style="display: none;">抵押物产权证</li>
+                    <li id="type-2" style="display: none;">担保人材料（身份证件、收入证明材料）</li>
                 </ul>
             </div>
             <div class="modal-footer">
@@ -72,10 +72,10 @@
     (function () {
         var guaranteeType = $.cookie('guaranteeType') || '';
         if (guaranteeType.indexOf('fcdy') != -1) {
-            $('.type-1').show();
+            $('#type-1').show();
         }
         if (guaranteeType.indexOf('grdb') != -1) {
-            $('.type-2').show();
+            $('#type-2').show();
         }
     })();
 </script>
