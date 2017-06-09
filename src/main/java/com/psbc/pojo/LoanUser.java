@@ -29,6 +29,8 @@ public class LoanUser {
 
     private String utmsrc;
 
+    private String fromUserCode;
+
     public Long getLoanid() {
         return loanid;
     }
@@ -141,5 +143,11 @@ public class LoanUser {
         this.utmsrc = utmsrc;
     }
 
+    public String getFromUserCode() {
+        return fromUserCode;
+    }
 
+    public void setFromUserCode(String fromUserCode) {
+        this.fromUserCode = fromUserCode;
+    }
 }

@@ -64,13 +64,19 @@ public class LoanController {
 	private LoanUserService loanuserServer;
 
 	@RequestMapping("/index")
-	public String index(HttpServletRequest req, HttpServletResponse resp) {
+	public String index(HttpServletRequest req, HttpServletResponse resp, String fucode) {
 	    String s = req.getQueryString();
 	    if(StringUtils.isEmpty(s)) s = "";
 		Cookie cookie = new Cookie("utmsrc", s);
 		cookie.setPath("/");
 		cookie.setMaxAge(3600);
 		resp.addCookie(cookie);
+
+		Cookie cookie2 = new Cookie("fucode", fucode);
+		cookie2.setPath("/");
+		cookie2.setMaxAge(3600);
+		resp.addCookie(cookie2);
+
 		return "/loan/index";
 	}
 
@@ -174,6 +180,7 @@ public class LoanController {
 			SimpleDateFormat dateFormater = new SimpleDateFormat("yyyyMMdd HHmmss");
 			loanUser.setCreatetime(dateFormater.format(new Date()));
 			loanUser.setUtmsrc(ReadCookieMap(req).get("utmsrc") == null ? "" : ReadCookieMap(req).get("utmsrc").getValue().toString());
+			loanUser.setFromUserCode(ReadCookieMap(req).get("fucode") == null ? "" : ReadCookieMap(req).get("fucode").getValue().toString());
 			loanuserServer.insertSelective(loanUser);
 			return "/loan/result3";
 		} catch (Exception e) {

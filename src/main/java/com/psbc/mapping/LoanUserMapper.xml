@@ -16,11 +16,12 @@
     <result column="updatetime" property="updatetime" jdbcType="VARCHAR" />
     <result column="workunit" property="workunit" jdbcType="VARCHAR" />
     <result column="utmsrc" property="utmsrc" jdbcType="VARCHAR" />
+    <result column="fromUserCode" property="fromUserCode" jdbcType="VARCHAR" />
   </resultMap>
   
   
 	<select id="selectByList" resultMap="BaseResultMap" parameterType="java.util.HashMap">
-  select t.loanid,t.usernm,t.phonenum,t.area,t.bank,t.loanNum,t.id,t.referrals,t1.workunit
+  select t.loanid,t.usernm,t.phonenum,t.area,t.bank,t.loanNum,t.id,t.fromUserCode,t.referrals,t1.workunit
     from loan_user_info t 
     left join loan_user t1 on t.id = t1.id
    where 1 = 1
@@ -31,7 +32,7 @@
   
   
 	<select id="selectByDetial" resultType="java.util.HashMap" parameterType="java.util.HashMap">
-  select t.loanid,t.usernm,t.phonenum,t.area,t.bank,t.loanNum,t.id,t.referrals,t.status,t1.workunit,t1.house,t1.loanNum as loanmen,t1.job,
+  select t.loanid,t.usernm,t.phonenum,t.area,t.bank,t.loanNum,t.id,t.referrals,t.status,t.fromUserCode,t1.workunit,t1.house,t1.loanNum as loanmen,t1.job,
   t1.income,t1.loanHouse,t1.loanCar,t1.loanConsumer
     from loan_user_info t 
     left join loan_user t1 on t.id = t1.id
@@ -96,7 +97,10 @@
       </if>   
       <if test="utmsrc != null" >
         utmsrc,
-      </if>                    
+      </if>
+      <if test="fromUserCode != null" >
+        fromUserCode,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="loanid != null" >
@@ -131,7 +135,10 @@
       </if>  
       <if test="utmsrc != null" >
         #{utmsrc,jdbcType=VARCHAR},
-      </if>                 
+      </if>
+      <if test="fromUserCode != null" >
+        #{fromUserCode,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   
