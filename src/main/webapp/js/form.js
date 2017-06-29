@@ -1,4 +1,4 @@
-var bank = bank || (function(Win,Doc,$,undefined){
+var bankObj = bankObj || (function(Win,Doc,$,undefined){
         var test,
             c2c = c2c || {};
         return {
@@ -153,8 +153,8 @@ var bank = bank || (function(Win,Doc,$,undefined){
     })(window,document,Zepto);
  
 (function(){
-    bank.formInit();
-    bank.appInit();
+	bankObj.formInit();
+	bankObj.appInit();
 })();
 
 function liClick(obj) {
