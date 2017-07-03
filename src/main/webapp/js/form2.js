@@ -268,7 +268,14 @@ function submitForm() {
         return;
     }
 
-    location.href = "submitForm.htm?unit1=" + workunit1 + "&unit2=" + workunit2 + "&local=" + localPerson + "&house=" + house + "&income=" + income + "&guarantee=" + guaranteeType + "&loannum=" + loannum + "&r=" + Math.random();
+    $('input[name="unit1"]').val(workunit1);
+    $('input[name="unit2"]').val(workunit2);
+    $('input[name="local"]').val(localPerson);
+    $('input[name="house"]').val(house);
+    $('input[name="income"]').val(income);
+    $('input[name="guarantee"]').val(guaranteeType);
+    $('input[name="loannum"]').val(loannum);
+    $('form').submit();
 }
 
 function submitApplicationForm() {
@@ -307,5 +314,8 @@ function submitApplicationForm() {
     } else {
         bank = area1 + '支行';
     }
-    location.href = "insertLoanUser.htm?userNm=" + userNm + "&phoneNm=" + phoneNm + "&area=" + area + "&bank=" + bank + "&referrals=" + referrals + "&r=" + Math.random();
+
+    $('input[name="area"]').val(area);
+    $('input[name="bank"]').val(bank);
+    $('form').submit();
 }

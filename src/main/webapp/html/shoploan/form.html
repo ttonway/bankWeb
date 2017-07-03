@@ -54,10 +54,10 @@
     <div class="page-header">
         请如实填写下方内容
     </div>
-    <form>
+    <form method="post" action="submitForm.htm">
         <div class="form-group">
             <label for="workunit1">行业选择</label>
-            <select class="form-control" name="workunit1" id="workunit1">
+            <select class="form-control" id="workunit1">
                 <option value="" selected disabled>从事行业</option>
                 <option>农林牧渔</option>
                 <option>批发零售</option>
@@ -66,11 +66,11 @@
                 <option>生产加工</option>
                 <option>其他</option>
             </select>
-            <select class="form-control" name="workunit2" id="workunit2" style="margin-top: 5px; display: none;">
+            <select class="form-control" id="workunit2" style="margin-top: 5px; display: none;">
                 <option value="" selected disabled>行业细分</option>
             </select>
 
-            <input type="text" class="form-control" name="workunit-other" id="workunit-other" placeholder="请手动输入"
+            <input type="text" class="form-control" id="workunit-other" placeholder="请手动输入"
                    style="margin-top: 5px; display: none;">
         </div>
 
@@ -92,7 +92,7 @@
 
         <div class="form-group">
             <label for="income">年销售额（万元）</label>
-            <input type="tel" class="form-control" id="income" name="income" placeholder="万元"
+            <input type="tel" class="form-control" id="income" placeholder="万元"
                    style="text-align: center;">
         </div>
 
@@ -110,7 +110,7 @@
                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-minus"></span>
                     </button>
                 </div>
-                <input type="tel" class="form-control" id="loannum" name="loannum" placeholder="万元"
+                <input type="tel" class="form-control" id="loannum" placeholder="万元"
                        style="text-align: center;">
                 <div class="input-group-btn addon-add">
                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>
@@ -119,6 +119,13 @@
             </div>
         </div>
 
+        <input type="hidden" name="unit1">
+        <input type="hidden" name="unit2">
+        <input type="hidden" name="local">
+        <input type="hidden" name="house">
+        <input type="hidden" name="income">
+        <input type="hidden" name="guarantee">
+        <input type="hidden" name="loannum">
         <button type="button" class="btn btn-primary btn-block" onclick="submitForm()">点击申请</button>
     </form>
 </div>

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<div class="form-wrap">
+<form class="form-wrap" method="post" action="submitForm.htm">
     <div class="form-tit">
         邮信贷信用测试
     </div>
@@ -43,7 +43,7 @@
                 C.金融、电信、烟草、电力
             </li>
         </ul>
-        <input   name="select1" name1="select1D" type="text" class="form-ipt js-other" placeholder="其它" />
+        <input name1="select1D" type="text" class="form-ipt js-other" placeholder="其它" />
     </div>
     <div class="form-item">
         <div class="item-tit">
@@ -93,7 +93,7 @@
         </div>
         <div class="item-calcula">
             <span class="cal-minus"></span>
-            <input  type="tel" name="num" id="num1" class="calcu-ipt" placeholder="5000 元"  />
+            <input  type="tel" id="num1" class="calcu-ipt" placeholder="5000 元"  />
             <span class="cal-plu"></span>
         </div>
     </div>
@@ -103,7 +103,7 @@
         </div>
         <div class="item-calcula">
             <span class="cal-minus"></span>
-            <input  type="tel" name="num" id="num2" class="calcu-ipt" placeholder="0 元"  />
+            <input  type="tel" id="num2" class="calcu-ipt" placeholder="0 元"  />
             <span class="cal-plu"></span>
         </div>
     </div>
@@ -113,7 +113,7 @@
         </div>
         <div class="item-calcula">
             <span class="cal-minus"></span>
-            <input  type="tel" name="num" id="num3" class="calcu-ipt" placeholder="0 元"  />
+            <input  type="tel" id="num3" class="calcu-ipt" placeholder="0 元"  />
             <span class="cal-plu"></span>
         </div>
     </div>
@@ -123,15 +123,24 @@
         </div>
         <div class="item-calcula">
             <span class="cal-minus"></span>
-            <input  type="tel" name="num" id="num4" class="calcu-ipt" placeholder="0 元"  />
+            <input  type="tel" id="num4" class="calcu-ipt" placeholder="0 元"  />
             <span class="cal-plu"></span>
         </div>
     </div>
-    
+
+    <input type="hidden" name="select1">
+    <input type="hidden" name="select1Val">
+    <input type="hidden" name="select2">
+    <input type="hidden" name="select3">
+    <input type="hidden" name="select4">
+    <input type="hidden" name="select5">
+    <input type="hidden" name="select6">
+    <input type="hidden" name="select7">
+    <input type="hidden" name="select8">
     <div class="form-item">
         <button type='button' class="form-submit" onclick="submitForm()">点击测算</button>
     </div>
-</div>
+</form>
 
 <!-- 引入项目js资源文件,并配置构建地址演示 -->
     <script type="text/javascript" src="../js/zepto.min.js"></script>

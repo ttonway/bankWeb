@@ -231,8 +231,17 @@ function submitForm() {
 	select6 = select6.replace(' ','').replace('元',''),
 	select7 = select7.replace(' ','').replace('元',''),
 	select8 = select8.replace(' ','').replace('元','')
-	
-	location.href = "submitForm.htm?select1="+select1+"&select1Val="+select1Val+"&select2="+select2+"&select3="+select3+"&select4="+select4+"&select5="+select5+"&select6="+select6+"&select7="+select7+"&select8="+select8+"&r="+Math.random();
+
+	$('input[name="select1"]').val(select1);
+	$('input[name="select1Val"]').val(select1Val);
+	$('input[name="select2"]').val(select2);
+	$('input[name="select3"]').val(select3);
+	$('input[name="select4"]').val(select4);
+	$('input[name="select5"]').val(select5);
+	$('input[name="select6"]').val(select6);
+	$('input[name="select7"]').val(select7);
+	$('input[name="select8"]').val(select8);
+	$('form').submit();
 		
 //	 $.ajax( {  
 //	        type : "post",  
@@ -267,7 +276,7 @@ function submitApplicationForm(){
 	 if (!reg.test(phoneNm)) {
 	      alert("请输入正确手机号码");
 			return;
-	 };
+	 }
 	if(area == "请选择"){
 		alert("请输入您的支行区域");
 		return;
@@ -280,5 +289,8 @@ function submitApplicationForm(){
 	if (bank == "市分行营业部（世纪大道金融城2号楼）") {
 		bank = "市分行营业部（人民路毓龙路交界处）";
 	}
-	location.href = "insertLoanUser.htm?userNm="+userNm+"&phoneNm="+phoneNm+"&area="+area+"&bank="+bank+"&referrals="+referrals+"&r="+Math.random();
+
+	$('input[name="area"]').val(area);
+	$('input[name="bank"]').val(bank);
+	$('form').submit();
 }

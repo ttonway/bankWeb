@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<div class="form-wrap">
+<form class="form-wrap" method="post" action="insertLoanUser.htm">
     <div class="form-tit">
         邮信贷申请
     </div>
@@ -31,11 +31,11 @@
     <div class="app-form">
         <div class="app-item">
             <span>姓 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
-            <input type="text" id="userNm" placeholder="请输入您的姓名">
+            <input type="text" id="userNm" name="userNm" placeholder="请输入您的姓名">
         </div>
         <div class="app-item">
             <span>手机号码</span>
-            <input type="text" id="phoneNm" placeholder="请输入您的手机号码">
+            <input type="text" id="phoneNm" name="phoneNm" placeholder="请输入您的手机号码">
         </div>
         <div class="app-item">
             <span>支行区域</span>
@@ -49,13 +49,16 @@
         </div>
         <div class="app-item">
             <span>推 荐 人</span>
-            <input type="text" id="referrals" placeholder="非必填">
+            <input type="text" id="referrals" name="referrals" placeholder="非必填">
         </div>
     </div>
+
+    <input type="hidden" name="area">
+    <input type="hidden" name="bank">
     <div class="form-item">
         <button type='button' onclick="submitApplicationForm()" class="form-submit">提交</button>
     </div>
-</div>
+</form>
 <div class="click-wrap">
     <div class="click-back">
         <span>返回</span>

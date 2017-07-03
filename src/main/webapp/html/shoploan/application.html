@@ -55,7 +55,7 @@
     <div class="page-header">
         请如实填写下方内容
     </div>
-    <form>
+    <form method="post" action="insertLoanUser.htm">
         <div class="form-group">
             <label for="userNm">姓名</label>
             <input type="text" class="form-control" id="userNm" name="userNm" placeholder="请输入您的姓名">
@@ -68,7 +68,7 @@
 
         <div class="form-group">
             <label for="area1">经办支行</label>
-            <select class="form-control" name="area1" id="area1">
+            <select class="form-control" id="area1">
                 <option value="" selected disabled>请选择</option>
                 <option>市区</option>
                 <option>东台</option>
@@ -79,11 +79,11 @@
                 <option>滨海</option>
                 <option>响水</option>
             </select>
-            <select class="form-control" name="area2" id="area2" style="margin-top: 5px; display: none;">
+            <select class="form-control" id="area2" style="margin-top: 5px; display: none;">
                 <option value="" selected disabled>请选择</option>
             </select>
 
-            <select class="form-control" name="bank" id="bank" style="margin-top: 5px; display: none;">
+            <select class="form-control" id="bank" style="margin-top: 5px; display: none;">
                 <option value="" selected disabled>请选择</option>
             </select>
         </div>
@@ -93,6 +93,8 @@
             <input type="text" class="form-control" id="referrals" name="referrals" placeholder="非必填">
         </div>
 
+        <input type="hidden" name="area">
+        <input type="hidden" name="bank">
         <button type="button" class="btn btn-primary btn-block" onclick="submitApplicationForm()">提交</button>
     </form>
 </div>
