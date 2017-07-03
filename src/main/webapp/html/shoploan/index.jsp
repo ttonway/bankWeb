@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -87,7 +89,13 @@
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="../lib/carousel-swipe.js"></script>
 <script>
-    $('a[type="button"]').attr('href', "form.htm?r=" + Math.random());
+    var params = location.search;
+    if (!params) {
+        params = "?r=" + Math.random();
+    } else {
+        params += "&r=" + Math.random();
+    }
+    $('a[type="button"]').attr('href', "form.htm" + params);
     $("#myCarousel").carousel();
 </script>
 

@@ -11,13 +11,11 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/shoploan")
@@ -31,24 +29,18 @@ public class ShopLoanController {
     private LoanUserService loanuserServer;
 
     @RequestMapping("/index")
-    public String index(HttpServletRequest req, HttpServletResponse resp, String fucode) {
-        String s = req.getQueryString();
-        if (StringUtils.isEmpty(s)) s = "";
-        Cookie cookie = new Cookie("utmsrc", s);
-        cookie.setPath("/");
-        cookie.setMaxAge(3600);
-        resp.addCookie(cookie);
-
-        Cookie cookie2 = new Cookie("fucode", fucode);
-        cookie2.setPath("/");
-        cookie2.setMaxAge(3600);
-        resp.addCookie(cookie2);
-
+    public String index() {
         return "/shoploan/index";
     }
 
     @RequestMapping("/form")
-    public String form() {
+    public String form(HttpServletRequest req, HttpSession session, String fucode) {
+        String s = req.getQueryString();
+        if (StringUtils.isEmpty(s)) s = "";
+
+        session.setAttribute("utmsrc", s);
+        session.setAttribute("fucode", fucode);
+
         return "/shoploan/form";
     }
 
@@ -57,8 +49,7 @@ public class ShopLoanController {
                              @RequestParam(value = "unit2") String workunit2, @RequestParam(value = "local") String localPerson,
                              @RequestParam(value = "house") String house, @RequestParam(value = "income") String income,
                              @RequestParam(value = "guarantee") String guaranteeType, @RequestParam(value = "loannum") String loannum,
-                             HttpServletRequest req, HttpServletResponse resp) {
-
+                             HttpSession session) {
         try {
 
             User loanUser = new User();
@@ -80,18 +71,11 @@ public class ShopLoanController {
             if (guaranteeType.contains("¸öÈËµ£±£")) {
                 gType += "grdb";
             }
-            Cookie cookie1 = new Cookie("guaranteeType", gType);
-            cookie1.setPath("/");
-            cookie1.setMaxAge(3600);
-            resp.addCookie(cookie1);
-            Cookie cookie = new Cookie("bankloanNum", loannum);
-            cookie.setPath("/");
-            cookie.setMaxAge(3600);
-            resp.addCookie(cookie);
-            Cookie cookie2 = new Cookie("bankid", String.valueOf(id));
-            cookie2.setPath("/");
-            cookie2.setMaxAge(3600);
-            resp.addCookie(cookie2);
+
+            session.setAttribute("guaranteeType", gType);
+            session.setAttribute("bankloanNum", loannum);
+            session.setAttribute("bankid", id);
+
             return "/shoploan/application";
         } catch (Exception e) {
             logger.error("insert user fail.", e);
@@ -100,27 +84,28 @@ public class ShopLoanController {
     }
 
     @RequestMapping("/insertLoanUser")
-    public String insertLoanUser(HttpServletRequest req, HttpServletResponse resp,
+    public String insertLoanUser(HttpSession session,
                                  @RequestParam(value = "area") String area, @RequestParam(value = "bank") String bank,
                                  @RequestParam(value = "userNm") String usernm, @RequestParam(value = "phoneNm") String phonenum,
                                  @RequestParam(value = "referrals") String referrals) {
         try {
-            if (ReadCookieMap(req).get("bankid") == null) {
+            Integer bankId = (Integer) session.getAttribute("bankid");
+            if (bankId == null) {
                 return "/shoploan/form";
             }
             LoanUser loanUser = new LoanUser();
             loanUser.setArea(area);
             loanUser.setBank(bank);
-            loanUser.setId(Integer.valueOf(ReadCookieMap(req).get("bankid").getValue().toString()));
+            loanUser.setId(bankId);
             loanUser.setUsernm(usernm);
             loanUser.setPhonenum(phonenum);
             loanUser.setReferrals(referrals);
-            loanUser.setLoanNum(Integer.valueOf(ReadCookieMap(req).get("bankloanNum").getValue().toString()));
+            loanUser.setLoanNum(Integer.valueOf((String) session.getAttribute("bankloanNum")));
             loanUser.setStatus("0");
             SimpleDateFormat dateFormater = new SimpleDateFormat("yyyyMMdd HHmmss");
             loanUser.setCreatetime(dateFormater.format(new Date()));
-            loanUser.setUtmsrc(ReadCookieMap(req).get("utmsrc") == null ? "" : ReadCookieMap(req).get("utmsrc").getValue().toString());
-            loanUser.setFromUserCode(ReadCookieMap(req).get("fucode") == null ? "" : ReadCookieMap(req).get("fucode").getValue().toString());
+            loanUser.setUtmsrc((String) session.getAttribute("utmsrc"));
+            loanUser.setFromUserCode((String) session.getAttribute("fucode"));
             loanuserServer.insertSelective(loanUser);
             return "/shoploan/result";
         } catch (Exception e) {
@@ -137,16 +122,5 @@ public class ShopLoanController {
     @RequestMapping("/application")
     public String applicationForm() {
         return "/loan/application";
-    }
-
-    private static Map<String, Cookie> ReadCookieMap(HttpServletRequest request) {
-        Map<String, Cookie> cookieMap = new HashMap<String, Cookie>();
-        Cookie[] cookies = request.getCookies();
-        if (null != cookies) {
-            for (Cookie cookie : cookies) {
-                cookieMap.put(cookie.getName(), cookie);
-            }
-        }
-        return cookieMap;
     }
 }

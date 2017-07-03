@@ -50,5 +50,11 @@ var bank = bank || (function(Win,Doc,$,undefined){
     bank.goTop();
     bank.lazyload();
     bank.swiper($(document).find('.index-slide-box'));
-    $('#formHref').attr('href',"form.htm?r="+Math.random());
+    var params = location.search;
+    if (!params) {
+        params = "?r=" + Math.random();
+    } else {
+        params += "&r=" + Math.random();
+    }
+    $('#formHref').attr('href',"form.htm" + params);
 })();

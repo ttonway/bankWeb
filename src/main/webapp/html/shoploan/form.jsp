@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -134,7 +136,7 @@
 <script src="../lib/jquery/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/form2.js"></script>
+<script type="text/javascript" src="../js/form2.js?v=2"></script>
 
 </body>
 </html>

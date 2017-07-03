@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,15 +27,15 @@
 <div class="res-wrapper">
     <img isLarge=true swipe=true class="res-bg" src="../images/bank-bg.png"/>
     <div class="res-div">
-        <img src="../images/bank-res4.png" class="img-suc"/>
-        <div class="res-txt3">
-            您的资料已成功提交我行会尽快安排工作人员与您联系
+        <img src="../images/bank-res3.png"/>
+        <div class="res-txt1">
+            抱歉，您的单位暂未纳入贷款范围
         </div>
     </div>
     <a href="index.htm">
     <div class="res-bottom">
         <div class="res-btn1">
-            知道了
+            我知道了
         </div>
     </div>  
     </a>

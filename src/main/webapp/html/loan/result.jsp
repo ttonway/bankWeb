@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,18 +27,28 @@
 <div class="res-wrapper">
     <img isLarge=true swipe=true class="res-bg" src="../images/bank-bg.png"/>
     <div class="res-div">
-        <img src="../images/bank-res3.png"/>
+        <img src="../images/bank-res1.png"/>
         <div class="res-txt1">
-            抱歉，您的单位暂未纳入贷款范围
+            您可贷￥${sessionScope.bankloanNum}
+        </div>
+        <div class="res-txt2">
+            额度仅供参考 以实际授信为准
         </div>
     </div>
-    <a href="index.htm">
+
     <div class="res-bottom">
+    <a href="application.htm">    
         <div class="res-btn1">
-            我知道了
+            我要申请
         </div>
-    </div>  
-    </a>
+    </a>     
+<a href="index.htm">       
+        <div class="res-btn2">
+            暂不申请
+        </div>
+</a>        
+    </div>
+
 </div>
 <!-- 引入项目js资源文件,并配置构建地址演示 -->
     <script type="text/javascript" src="../js/zepto.min.js"></script>

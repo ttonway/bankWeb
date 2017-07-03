@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,27 +27,18 @@
 <div class="res-wrapper">
     <img isLarge=true swipe=true class="res-bg" src="../images/bank-bg.png"/>
     <div class="res-div">
-        <img src="../images/bank-res1.png"/>
-        <div class="res-txt1">
-        </div>
-        <div class="res-txt2">
-            额度仅供参考 以实际授信为准
+        <img src="../images/bank-res4.png" class="img-suc"/>
+        <div class="res-txt3">
+            您的资料已成功提交我行会尽快安排工作人员与您联系
         </div>
     </div>
-
+    <a href="index.htm">
     <div class="res-bottom">
-    <a href="application.htm">    
         <div class="res-btn1">
-            我要申请
+            知道了
         </div>
-    </a>     
-<a href="index.htm">       
-        <div class="res-btn2">
-            暂不申请
-        </div>
-</a>        
-    </div>
-
+    </div>  
+    </a>
 </div>
 <!-- 引入项目js资源文件,并配置构建地址演示 -->
     <script type="text/javascript" src="../js/zepto.min.js"></script>
@@ -53,11 +46,5 @@
     <script type="text/javascript" src="../js/fastclick.js"></script>
     <script type="text/javascript" src="../js/swipe.js"></script>
     <script type="text/javascript" src="../js/base.js"></script>
-<script>
-(function() {
-	var loanNum = $.cookie('bankloanNum');
-    $('.res-txt1').html("您可贷￥"+loanNum);
-})();	
-</script>    
 </body>
 </html>
