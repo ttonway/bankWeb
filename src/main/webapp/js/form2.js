@@ -118,7 +118,7 @@
                 area2.hide();
             }
             area2.change();
-        });
+        }).change();
 
         area2.on('change', function () {
             var a2 = $(this).val();
@@ -313,6 +313,10 @@ function submitApplicationForm() {
         }
     } else {
         bank = area1 + '支行';
+    }
+    if (!bank) {
+        alert("请选择经办支行");
+        return;
     }
 
     $('input[name="area"]').val(area);

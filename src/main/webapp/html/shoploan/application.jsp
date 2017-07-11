@@ -106,6 +106,6 @@
 <script src="../lib/jquery/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/form2.js?v=2"></script>
+<script type="text/javascript" src="../js/form2.js?v=3"></script>
 </body>
 </html>
