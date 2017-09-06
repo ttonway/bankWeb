@@ -130,6 +130,7 @@ public class LoanController {
                             - Double.valueOf(select7) - Double.valueOf(select8) / 36) * 36 / (1.06175));
                     loanNum = loanNum > 300000 ? 300000 : loanNum / 1000 * 1000;
                 }
+                loanNum = loanNum > 300000 ? 300000 : loanNum;
                 loanNum = loanNum < 0 ? 0 : loanNum;
                 int id = loanServer.insertSelective(loanUser);
 
